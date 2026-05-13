@@ -1,0 +1,2 @@
+Ce fichier vide sert à garder le dossier uploads/ dans Git.
+Sans lui, Git ignorerait un dossier vide.

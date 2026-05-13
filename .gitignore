@@ -1,0 +1,20 @@
+# ============================================================
+# .gitignore — Fichiers à NE PAS envoyer sur GitHub
+# COMMIT PAR : FERIEL (Membre A)
+# ============================================================
+
+# Ne jamais uploader les identifiants BDD
+config.php
+
+# Ne pas uploader les photos (trop lourdes, locales)
+uploads/*
+
+# Garder le dossier uploads/ mais pas son contenu
+!uploads/.gitkeep
+
+# Fichiers système Windows/Mac
+Thumbs.db
+.DS_Store
+
+# Fichier de test temporaire
+test.php

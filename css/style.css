@@ -1,0 +1,680 @@
+/* ============================================================
+   css/style.css — Styles de SportLoc
+   COMMIT PAR : FERIEL (Membre A)
+   ============================================================ */
+
+/* ---- RESET & BASE ---- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #f5f5f5;
+    color: #222;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+a {
+    color: #1D9E75;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* ---- NAVBAR ---- */
+.navbar {
+    background: #fff;
+    border-bottom: 1px solid #e5e5e5;
+    padding: 0 32px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav-logo {
+    font-size: 18px;
+    font-weight: 600;
+    color: #222;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.nav-links a {
+    padding: 6px 14px;
+    border-radius: 8px;
+    color: #555;
+    font-size: 14px;
+    transition: background 0.15s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    background: #f0f0f0;
+    color: #222;
+    text-decoration: none;
+}
+
+/* ---- NAVBAR ADMIN ---- */
+.admin-nav {
+    background: #085041;
+    border-bottom: none;
+}
+
+.admin-nav .nav-logo {
+    color: #fff;
+}
+
+.admin-nav .nav-links a {
+    color: rgba(255,255,255,0.8);
+}
+
+.admin-nav .nav-links a:hover,
+.admin-nav .nav-links a.active {
+    background: rgba(255,255,255,0.15);
+    color: #fff;
+}
+
+/* ---- BOUTONS ---- */
+.btn-primary {
+    background: #1D9E75;
+    color: #fff !important;
+    padding: 7px 16px;
+    border-radius: 8px;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.btn-primary:hover {
+    background: #0F6E56;
+    text-decoration: none;
+}
+
+.btn-outline {
+    border: 1px solid #ccc;
+    padding: 6px 14px;
+    border-radius: 8px;
+    color: #555 !important;
+    font-size: 14px;
+    cursor: pointer;
+    background: none;
+    display: inline-block;
+}
+
+.btn-outline:hover {
+    background: #f5f5f5;
+    text-decoration: none;
+}
+
+.btn-danger {
+    background: #E24B4A !important;
+    color: #fff !important;
+    padding: 6px 14px;
+    border-radius: 8px;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.btn-danger:hover {
+    background: #c0392b !important;
+    text-decoration: none;
+}
+
+.btn-sm {
+    padding: 4px 10px;
+    font-size: 12px;
+}
+
+.btn-submit {
+    width: 100%;
+    padding: 11px;
+    background: #1D9E75;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 4px;
+}
+
+.btn-submit:hover {
+    background: #0F6E56;
+}
+
+/* ---- CONTENEUR PRINCIPAL ---- */
+.container {
+    max-width: 1100px;
+    margin: 32px auto;
+    padding: 0 24px;
+}
+
+/* ---- HERO ---- */
+.hero {
+    background: linear-gradient(135deg, #1D9E75, #0F6E56);
+    padding: 60px 32px;
+    text-align: center;
+    color: #fff;
+}
+
+.hero h1 {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 16px;
+    opacity: 0.9;
+    margin-bottom: 24px;
+}
+
+.hero-search {
+    display: flex;
+    gap: 8px;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.hero-search input {
+    flex: 1;
+    padding: 10px 16px;
+    border-radius: 8px;
+    border: none;
+    font-size: 15px;
+}
+
+.hero-search button {
+    padding: 10px 20px;
+    background: #fff;
+    color: #0F6E56;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+/* ---- FILTRES CATÉGORIES ---- */
+.cat-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 24px 0 16px;
+}
+
+.pill {
+    padding: 6px 16px;
+    border-radius: 999px;
+    border: 1px solid #ddd;
+    background: #fff;
+    color: #555;
+    font-size: 13px;
+    cursor: pointer;
+    transition: all 0.15s;
+}
+
+.pill:hover,
+.pill.active {
+    background: #E1F5EE;
+    color: #0F6E56;
+    border-color: #5DCAA5;
+    text-decoration: none;
+}
+
+/* ---- GRILLE DE CARTES ---- */
+.section-title {
+    font-size: 16px;
+    font-weight: 600;
+    margin: 16px 0 12px;
+    color: #333;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 16px;
+}
+
+/* ---- CARTE MATÉRIEL ---- */
+.card {
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: box-shadow 0.2s;
+}
+
+.card:hover {
+    box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+}
+
+.card-img img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    display: block;
+}
+
+.card-body {
+    padding: 14px;
+}
+
+.card-title {
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.card-desc {
+    font-size: 12px;
+    color: #777;
+    margin-bottom: 8px;
+    min-height: 30px;
+}
+
+.card-price {
+    font-size: 18px;
+    font-weight: 700;
+    color: #1D9E75;
+}
+
+.card-price span {
+    font-size: 12px;
+    font-weight: 400;
+    color: #999;
+}
+
+.badge-available {
+    display: inline-block;
+    background: #E1F5EE;
+    color: #0F6E56;
+    font-size: 11px;
+    padding: 2px 10px;
+    border-radius: 999px;
+    margin: 6px 0;
+}
+
+.btn-card {
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+    padding: 8px;
+    background: #1D9E75;
+    color: #fff !important;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    transition: background 0.15s;
+}
+
+.btn-card:hover {
+    background: #0F6E56;
+    text-decoration: none;
+}
+
+/* ---- FORMULAIRES ---- */
+.form-page {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 48px 16px;
+}
+
+.form-card {
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    border-radius: 12px;
+    padding: 32px;
+    width: 100%;
+    max-width: 440px;
+}
+
+.form-card h2 {
+    font-size: 22px;
+    margin-bottom: 4px;
+}
+
+.form-subtitle {
+    color: #777;
+    font-size: 14px;
+    margin-bottom: 24px;
+}
+
+.form-group {
+    margin-bottom: 16px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 13px;
+    color: #444;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 9px 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 14px;
+    background: #fafafa;
+    transition: border 0.15s;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #1D9E75;
+    background: #fff;
+}
+
+.form-group input[type="file"] {
+    padding: 6px;
+    background: #fff;
+}
+
+.form-link {
+    text-align: center;
+    font-size: 13px;
+    color: #777;
+    margin-top: 16px;
+}
+
+/* ---- ERREURS JS ---- */
+.js-error {
+    color: #E24B4A;
+    font-size: 12px;
+    margin-top: 3px;
+    min-height: 16px;
+}
+
+/* ---- ALERTES PHP ---- */
+.alert {
+    padding: 10px 16px;
+    border-radius: 8px;
+    font-size: 14px;
+    margin-bottom: 16px;
+}
+
+.alert-success {
+    background: #E1F5EE;
+    color: #085041;
+    border: 1px solid #5DCAA5;
+}
+
+.alert-error {
+    background: #FCEBEB;
+    color: #A32D2D;
+    border: 1px solid #F09595;
+}
+
+/* ---- TABLEAUX ---- */
+.table-wrapper {
+    overflow-x: auto;
+    border-radius: 12px;
+    border: 1px solid #e5e5e5;
+}
+
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    font-size: 14px;
+}
+
+.data-table th {
+    background: #f9f9f9;
+    padding: 12px 16px;
+    text-align: left;
+    font-size: 12px;
+    color: #777;
+    font-weight: 600;
+    text-transform: uppercase;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.data-table td {
+    padding: 12px 16px;
+    border-bottom: 1px solid #f0f0f0;
+    vertical-align: middle;
+}
+
+.data-table tr:last-child td {
+    border-bottom: none;
+}
+
+.data-table tr:hover td {
+    background: #fafafa;
+}
+
+/* ---- BADGES STATUT ---- */
+.status-pill {
+    display: inline-block;
+    padding: 3px 12px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.status-en-attente  { background: #FAEEDA; color: #854F0B; }
+.status-confirmée   { background: #E1F5EE; color: #085041; }
+.status-annulée     { background: #FCEBEB; color: #A32D2D; }
+
+.badge { display: inline-block; padding: 3px 10px; border-radius: 999px; font-size: 12px; }
+.badge-success { background: #E1F5EE; color: #085041; }
+.badge-danger  { background: #FCEBEB; color: #A32D2D; }
+
+/* ---- COMPTE CLIENT ---- */
+.account-header {
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    border-radius: 12px;
+    padding: 24px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.avatar {
+    width: 52px;
+    height: 52px;
+    background: #E1F5EE;
+    color: #0F6E56;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+/* ---- STATS ADMIN ---- */
+.stat-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.stat-card {
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    border-radius: 12px;
+    padding: 20px 24px;
+}
+
+.stat-label {
+    font-size: 13px;
+    color: #777;
+    margin-bottom: 8px;
+}
+
+.stat-val {
+    font-size: 28px;
+    font-weight: 700;
+    color: #222;
+}
+
+/* ---- GRAPHIQUE BARRES ---- */
+.bar-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 10px;
+}
+
+.bar-label {
+    width: 90px;
+    font-size: 13px;
+    color: #555;
+    flex-shrink: 0;
+}
+
+.bar-track {
+    flex: 1;
+    height: 10px;
+    background: #f0f0f0;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.bar-fill {
+    height: 100%;
+    background: #1D9E75;
+    border-radius: 5px;
+    transition: width 0.5s ease;
+}
+
+.bar-val {
+    width: 30px;
+    font-size: 13px;
+    color: #777;
+    text-align: right;
+}
+
+/* ---- ADMIN LAYOUT ---- */
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.page-title {
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.form-section {
+    padding: 24px;
+    margin-bottom: 20px;
+    border: 1px solid #e5e5e5;
+    border-radius: 12px;
+    background: #fff;
+}
+
+.form-section h3 {
+    margin-bottom: 16px;
+    font-size: 16px;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.hint {
+    font-size: 12px;
+    color: #999;
+    margin-top: 4px;
+    display: block;
+}
+
+/* ---- SELECT STATUT COLORÉ ---- */
+.select-statut {
+    padding: 4px 8px;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.statut-en-attente { background: #FAEEDA; color: #854F0B; }
+.statut-confirmée  { background: #E1F5EE; color: #085041; }
+.statut-annulée    { background: #FCEBEB; color: #A32D2D; }
+
+/* ---- RÉSUMÉ PRIX ---- */
+.price-summary {
+    background: #E1F5EE;
+    border: 1px solid #5DCAA5;
+    border-radius: 8px;
+    padding: 12px 16px;
+    font-size: 15px;
+    color: #085041;
+    margin: 12px 0;
+    text-align: center;
+}
+
+/* ---- DIVERS ---- */
+.empty-state {
+    text-align: center;
+    padding: 48px;
+    color: #999;
+}
+
+.muted { color: #999; font-size: 13px; }
+
+.filter-bar {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.search-info {
+    font-size: 14px;
+    color: #777;
+    margin-bottom: 12px;
+}
+
+.demo-box {
+    margin-top: 20px;
+    padding: 12px;
+    background: #f9f9f9;
+    border: 1px dashed #ccc;
+    border-radius: 8px;
+    font-size: 12px;
+    color: #777;
+    line-height: 1.8;
+}
+
+/* ---- FOOTER ---- */
+.footer {
+    text-align: center;
+    padding: 24px;
+    font-size: 13px;
+    color: #aaa;
+    margin-top: 48px;
+    border-top: 1px solid #eee;
+}
